@@ -1,6 +1,9 @@
-venv/
+output/videos/*.mp4
+output/*.mp4
 __pycache__/
 *.pyc
+venv/
 .env
-data/chroma_db/
 desktop.ini
+**/desktop.ini
+data/chroma_db/
