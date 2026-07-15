@@ -1,0 +1,16 @@
+openai
+requests
+apify-client
+python-telegram-bot
+pexels-api
+elevenlabs
+chromadb
+sentence-transformers
+langchain
+langchain-community
+pypdf
+pymupdf
+moviepy
+pillow
+python-dotenv
+cross-encoder

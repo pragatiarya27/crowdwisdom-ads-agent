@@ -1,0 +1,1 @@
+from hermes.connectors.telegram import TelegramConnector
