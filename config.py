@@ -27,4 +27,5 @@ CHROMA_DB_DIR = os.getenv("CHROMA_DB_DIR", "data/chroma_db/")
 # LLM Settings
 LLM_MODEL =  "openrouter/free"
 LLM_BASE_URL = "https://openrouter.ai/api/v1"
+
 MAX_TOKENS = 2000

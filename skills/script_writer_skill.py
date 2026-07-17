@@ -46,7 +46,8 @@ class ScriptWriterSkill(BaseSkill):
         SOLUTION (12 seconds): [how CrowdWisdom solves it]
         CTA (5 seconds): [call to action]
         
-        Make it emotional and relatable. Keep it short and punchy.
+       Make it emotional and relatable. Keep it short and punchy.
+        IMPORTANT: Every section MUST end with a full stop (.).
         """
         content = self.call_llm(prompt)
         return {"type": "pain_based", "script": content}
@@ -65,6 +66,7 @@ class ScriptWriterSkill(BaseSkill):
         CTA (5 seconds): [call to action]
         
         Make it data-driven and credible.
+        IMPORTANT: Every section MUST end with a full stop (.).
         """
         content = self.call_llm(prompt)
         script_text = content if content and content.strip() != "None" else "Script generation pending - RAG data loaded successfully"
@@ -84,6 +86,8 @@ class ScriptWriterSkill(BaseSkill):
         CTA (5 seconds): [visit CrowdWisdomTrading.com]
         
         Make it inspiring and trustworthy.
+        IMPORTANT: Every section MUST end with a full stop (.).
+       
         """
         content = self.call_llm(prompt)
         return {"type": "crowd_wisdom", "script": content}
