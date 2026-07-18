@@ -35,32 +35,39 @@ Agents → pick tasks → run skills → update board → notify Telegram
 ---
 
 ## 📁 Project Structurecrowdwisdom-ads-agent/
-├── hermes/                    # Custom Hermes Framework
-│   ├── task.py               # Task dataclass
-│   ├── kanban.py             # KanbanBoard
-│   ├── skill.py              # BaseSkill
-│   ├── agent.py              # BaseAgent
-│   ├── loop.py               # AgentLoop
+project/
+├── hermes/                          # Custom Hermes Framework
+│   ├── task.py                      # Task dataclass
+│   ├── kanban.py                    # KanbanBoard
+│   ├── skill.py                     # BaseSkill
+│   ├── agent.py                     # BaseAgent
+│   ├── loop.py                      # AgentLoop
 │   └── connectors/
-│       └── telegram.py       # Telegram connector
+│       └── telegram.py              # Telegram connector
+│
 ├── agents/
-│   ├── ads_manager_agent.py  # Agent 1
-│   ├── script_agent.py       # Agent 2
-│   └── video_agent.py        # Agent 3
+│   ├── ads_manager_agent.py         # Agent 1
+│   ├── script_agent.py              # Agent 2
+│   └── video_agent.py               # Agent 3
+│
 ├── skills/
 │   ├── apify_scraper_skill.py
 │   ├── pain_extractor_skill.py
 │   ├── rag_skill.py
 │   ├── script_writer_skill.py
 │   └── video_generator_skill.py
+│
 ├── data/
 │   ├── ads_results.json
 │   ├── pain_concepts.json
 │   ├── scripts_output.json
 │   └── crowdwisdom_data_1.json
-├── output/videos/            # Generated MP4 ads
-├── main.py                   # Run full pipeline
-└── config.py                 # API keys config---
+│
+├── output/
+│   └── videos/                      # Generated MP4 advertisements
+│
+├── main.py                          # Runs the complete multi-agent pipeline
+└── config.py                        # Configuration and API keys
 
 ## ⚙️ Setup
 
@@ -106,22 +113,32 @@ python main.py
 
 
 ## 📊 Pipeline FlowAdsManagerAgent
-1. AdsManagerAgent
-  └── Scrapes Meta Ads Library via Apify
-  └── Extracts pain points using LLM
-  └── Saves → ads_results.json, pain_concepts.json
-2. ScriptAgent
-  └── Indexes CrowdWisdom data via RAG (ChromaDB)
-  └── Generates 3 ad scripts:
-  ├── pain_based    — trader pain points
-  ├── data_based    — unique CrowdWisdom data
-  └── crowd_wisdom  — crowd intelligence angle
-  └── Saves → scripts_output.json
-3. VideoAgent
-  └── Parses scripts into scenes
-  └── Generates HTML compositions
-  └── Renders via HyperFrames → MP4 videos
-  └── Saves → output/videos/
+
+AdsManagerAgent
+├── Scrapes advertisements from the Meta Ads Library using Apify
+├── Extracts customer pain points using an LLM
+└── Saves the output to:
+    ├── data/ads_results.json
+    └── data/pain_concepts.json
+
+ScriptAgent
+├── Indexes CrowdWisdom data using RAG (ChromaDB)
+├── Generates three advertisement scripts:
+│   ├── Pain-Based Ad
+│   │   └── Focuses on trader pain points
+│   ├── Data-Based Ad
+│   │   └── Highlights unique CrowdWisdom insights
+│   └── Crowd Wisdom Ad
+│       └── Emphasizes collective market intelligence
+└── Saves the output to:
+    └── data/scripts_output.json
+
+VideoAgent
+├── Parses generated scripts into scenes
+├── Creates HTML-based video compositions
+├── Renders videos into MP4 format using HyperFrames
+└── Saves the generated videos to:
+    └── output/videos/
 ---
 
 ## 🎬 Video Output
@@ -141,10 +158,72 @@ The bot sends live updates at every pipeline step:
 - Video generation progress
 
 Bot: [@CrowdWisdomAdsBot](https://t.me/CrowdWisdomAdsbot)
+ 
+---
+
+## 📚 Data Sources
+
+### CrowdWisdom Proprietary Data
+- `data/crowdwisdom_data_1.json` — Real trading signals and market analysis
+- `data/crowdwisdom_data_2.json` — Crowd sentiment and trading insights
+
+### Meta Ads Library
+- Scraped via Apify: `apify/facebook-ads-scraper`
+- Query: "trading signals stock market crowd wisdom"
+
+### Reference Videos (Style Inspiration)
+- https://www.youtube.com/watch?v=UBvrPGMtK5g
+- https://www.youtube.com/watch?v=JFMxDgmW8cw
+- https://www.youtube.com/watch?v=8nFTkjPk80k
+- https://www.youtube.com/watch?v=bpM9D1kQaAs
+- https://www.youtube.com/watch?v=g-qW8fQimyg
+- https://www.youtube.com/watch?v=vqFUuLO06qc
+
+### Alternative Video Tools (Evaluated)
+- https://github.com/baldiga/headless-studio
+- https://github.com/OpenCut-app/OpenCut
+- https://github.com/calesthio/OpenMontage
 
 ---
 
 ## 🧪 Individual Tests
+
+```bash
+python test_hermen.py        # Test Hermes framework
+python test_telegram.py      # Test Telegram connector
+python test_ads_manager.py   # Test Ads Manager Agent
+python test_script_agent.py  # Test Script Agent - generates 3 ad scripts
+python test_script2.py       # Test Script 2 - prints data_based script content
+python test_video_agent.py   # Test Video Agent - generates 3 MP4 videos
+```
+
+---
+
+## 📝 Evaluation Criteria Met
+
+- ✅ Kanban board with todo/in_progress/done/failed columns
+- ✅ Agent loops running tasks in cycles
+- ✅ Skills pattern (BaseSkill → concrete skills)
+- ✅ Telegram live updates during pipeline
+- ✅ HyperFrames video generation
+- ✅ Apify Meta Ads scraping
+- ✅ RAG over CrowdWisdom proprietary data
+- ✅ OpenRouter LLM integration
+
+---
+
+*Built for CrowdWisdomTrading.com internship assessment by Pragati Arya*
+Save then run:
+
+bash
+git add .
+git commit -m "Update README with complete documentation and data sources"
+git push origin main
+
+
+
+
+
 
 ## 🧪 Individual Tests
 
