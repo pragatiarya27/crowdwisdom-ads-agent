@@ -33,9 +33,9 @@ Agents → pick tasks → run skills → update board → notify Telegram
 
 ---
 
-## 📁 Project Structure
+# Project Structure
 
-` ` `
+```text
 crowdwisdom-ads-agent/
 ├── hermes/                          # Custom Hermes Framework
 │   ├── task.py                      # Task dataclass
@@ -66,8 +66,7 @@ crowdwisdom-ads-agent/
 ├── main.py                          # Runs the complete pipeline
 ├── config.py                        # Configuration and API keys
 └── requirements.txt                 # Python dependencies
-` ` `
-
+```
 ## ⚙️ Setup
 
 ### 1. Clone the repo
