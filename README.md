@@ -1,4 +1,3 @@
-# crowdwisdom-ads-agent
 # CrowdWisdom Trading Video Ads Agent 🚀
 
 An AI-powered multi-agent pipeline that automatically generates video ads for [CrowdWisdomTrading.com](https://crowdwisdomtrading.com) using the Hermes agent framework.
@@ -70,8 +69,8 @@ project/
 │
 ├── main.py                          # Runs the complete multi-agent pipeline
 └── config.py  
----                      # Configuration and API keys
-
+                   # Configuration and API keys
+---
 ## ⚙️ Setup
 
 ### 1. Clone the repo
