@@ -1,5 +1,17 @@
 {
-  "pain_points": [],
-  "hooks": [],
-  "selling_points": []
+  "pain_points": [
+    "No data provided in the ad",
+    "Missing pain point details",
+    "Unable to analyze content"
+  ],
+  "hooks": [
+    "No emotional hooks identified",
+    "Ad content missing",
+    "Cannot extract hooks"
+  ],
+  "selling_points": [
+    "Insufficient information",
+    "No unique features highlighted",
+    "Ad incomplete"
+  ]
 }

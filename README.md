@@ -35,7 +35,8 @@ Agents → pick tasks → run skills → update board → notify Telegram
 ---
 
 ## 📁 Project Structurecrowdwisdom-ads-agent/
---text
+
+---
 project/
 ├── hermes/                          # Custom Hermes Framework
 │   ├── task.py                      # Task dataclass
@@ -68,7 +69,8 @@ project/
 │   └── videos/                      # Generated MP4 advertisements
 │
 ├── main.py                          # Runs the complete multi-agent pipeline
-└── config.py                        # Configuration and API keys
+└── config.py  
+---                      # Configuration and API keys
 
 ## ⚙️ Setup
 
@@ -115,6 +117,7 @@ python main.py
 
 ## 📊 Pipeline FlowAdsManagerAgent
 
+---
 AdsManagerAgent
 ├── Scrapes advertisements from the Meta Ads Library using Apify
 ├── Extracts customer pain points using an LLM
@@ -145,7 +148,7 @@ VideoAgent
 ## 🎬 Video Output
 
 3 x 30-second MP4 video ads generated:
-- `output/videos/ad_pain_based_1/renders/`
+- `output/videos/ad_pain_based_1python test_ads_manager.py/renders/`
 - `output/videos/ad_data_based_2/renders/`
 - `output/videos/ad_crowd_wisdom_3/renders/`
 
