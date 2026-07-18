@@ -35,6 +35,7 @@ Agents → pick tasks → run skills → update board → notify Telegram
 ---
 
 ## 📁 Project Structurecrowdwisdom-ads-agent/
+--text
 project/
 ├── hermes/                          # Custom Hermes Framework
 │   ├── task.py                      # Task dataclass
