@@ -119,7 +119,7 @@ class VideoGeneratorSkill(BaseSkill):
 # Copy and replace your existing generate_html() method with this
 
     def generate_html(self, scenes: list, script_type: str) -> str:
-        scene_duration = 8 
+        scene_duration = 8
         total_duration = len(scenes) * scene_duration
 
         scenes_html = ""
@@ -209,7 +209,7 @@ class VideoGeneratorSkill(BaseSkill):
             cwd=project_dir,
             capture_output=True,
             text=True,
-            timeout=1200,
+            timeout=1800,
             env=env
         )
 
@@ -235,6 +235,7 @@ class VideoGeneratorSkill(BaseSkill):
 
         os.makedirs(OUTPUT_DIR, exist_ok=True)
         video_paths = []
+
 
         for i, script in enumerate(scripts):
             script_type = script.get("type", f"script_{i}")

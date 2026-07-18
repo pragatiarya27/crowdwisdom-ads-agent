@@ -92,7 +92,7 @@ npm install -g npx
 ```
 
 ### 5. Create `.env` file
-```env
+```envls output/videos/
 OPENROUTER_API_KEY
 APIFY_API_TOKEN
 TELEGRAM_BOT_TOKEN
