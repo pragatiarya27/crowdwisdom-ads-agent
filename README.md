@@ -33,10 +33,10 @@ Agents → pick tasks → run skills → update board → notify Telegram
 
 ---
 
-## 📁 Project Structurecrowdwisdom-ads-agent/
+## 📁 Project Structure
 
----
-project/
+` ` `
+crowdwisdom-ads-agent/
 ├── hermes/                          # Custom Hermes Framework
 │   ├── task.py                      # Task dataclass
 │   ├── kanban.py                    # KanbanBoard
@@ -45,32 +45,29 @@ project/
 │   ├── loop.py                      # AgentLoop
 │   └── connectors/
 │       └── telegram.py              # Telegram connector
-│
 ├── agents/
 │   ├── ads_manager_agent.py         # Agent 1
 │   ├── script_agent.py              # Agent 2
 │   └── video_agent.py               # Agent 3
-│
 ├── skills/
-│   ├── apify_scraper_skill.py
-│   ├── pain_extractor_skill.py
-│   ├── rag_skill.py
-│   ├── script_writer_skill.py
-│   └── video_generator_skill.py
-│
+│   ├── apify_scraper_skill.py       # Scrapes Meta Ads
+│   ├── pain_extractor_skill.py      # Extracts pain points
+│   ├── rag_skill.py                 # RAG over CrowdWisdom data
+│   ├── script_writer_skill.py       # Writes 3 ad scripts
+│   └── video_generator_skill.py     # HyperFrames video generation
 ├── data/
 │   ├── ads_results.json
 │   ├── pain_concepts.json
 │   ├── scripts_output.json
-│   └── crowdwisdom_data_1.json
-│
+│   ├── crowdwisdom_data_1.json
+│   └── crowdwisdom_data_2.json
 ├── output/
 │   └── videos/                      # Generated MP4 advertisements
-│
-├── main.py                          # Runs the complete multi-agent pipeline
-└── config.py  
-                   # Configuration and API keys
----
+├── main.py                          # Runs the complete pipeline
+├── config.py                        # Configuration and API keys
+└── requirements.txt                 # Python dependencies
+` ` `
+
 ## ⚙️ Setup
 
 ### 1. Clone the repo
@@ -114,35 +111,27 @@ python main.py
 ```
 
 
-## 📊 Pipeline FlowAdsManagerAgent
+## 📊 Pipeline Flow
 
----
-AdsManagerAgent
-├── Scrapes advertisements from the Meta Ads Library using Apify
-├── Extracts customer pain points using an LLM
-└── Saves the output to:
-    ├── data/ads_results.json
-    └── data/pain_concepts.json
+**Phase 1 — AdsManagerAgent:**
+- Scrapes Meta Ads Library via Apify
+- Extracts pain points, hooks, selling points using LLM
+- Saves to `data/ads_results.json` and `data/pain_concepts.json`
 
-ScriptAgent
-├── Indexes CrowdWisdom data using RAG (ChromaDB)
-├── Generates three advertisement scripts:
-│   ├── Pain-Based Ad
-│   │   └── Focuses on trader pain points
-│   ├── Data-Based Ad
-│   │   └── Highlights unique CrowdWisdom insights
-│   └── Crowd Wisdom Ad
-│       └── Emphasizes collective market intelligence
-└── Saves the output to:
-    └── data/scripts_output.json
+**Phase 2 — ScriptAgent:**
+- Indexes CrowdWisdom data into ChromaDB via RAG
+- Generates 3 ad scripts:
+  - Script 1: Pain-based — trader pain points
+  - Script 2: Data-based — unique CrowdWisdom trading data
+  - Script 3: Crowd Wisdom — collective intelligence angle
+- Saves to `data/scripts_output.json`
 
-VideoAgent
-├── Parses generated scripts into scenes
-├── Creates HTML-based video compositions
-├── Renders videos into MP4 format using HyperFrames
-└── Saves the generated videos to:
-    └── output/videos/
----
+**Phase 3 — VideoAgent:**
+- Parses each script into scenes (HOOK, PROBLEM, SOLUTION, CTA)
+- Generates HTML composition for each scene
+- Renders via HyperFrames to produce 30-second MP4 videos
+- Saves to `output/videos/`
+
 
 ## 🎬 Video Output
 
