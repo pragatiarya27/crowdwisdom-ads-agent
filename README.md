@@ -128,7 +128,7 @@ python main.py
 
 ## 🎬 Video Output
 
-3 x 30-second MP4 video ads generated:
+3 x 32-second MP4 video ads generated:
 - `output/videos/ad_pain_based_1/renders/`
 - `output/videos/ad_data_based_2/renders/`
 - `output/videos/ad_crowd_wisdom_3/renders/`
