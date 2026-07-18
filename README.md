@@ -62,6 +62,7 @@ Agents → pick tasks → run skills → update board → notify Telegram
 ├── main.py                   # Run full pipeline
 └── config.py                 # API keys config---
 
+---
 ## ⚙️ Setup
 
 ### 1. Clone the repo
