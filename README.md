@@ -107,6 +107,7 @@ python main.py
 
 
 ## 📊 Pipeline FlowAdsManagerAgent
+```text
 1. AdsManagerAgent
   └── Scrapes Meta Ads Library via Apify
   └── Extracts pain points using LLM
